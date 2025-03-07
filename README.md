@@ -53,25 +53,21 @@ rutas_audios = [
     "C:/Users/Esteban/Videos/PRUEBA/Proyecto predeterminado/MICROFONO 1.mp3",
     "C:/Users/Esteban/Videos/PRUEBA/Proyecto predeterminado/MICROFONO 2.mp3",
     "C:/Users/Esteban/Videos/PRUEBA/Proyecto predeterminado/MICROFONO 3.mp3"
- ```
+ ```  
 
 
+![WhatsApp Image 2025-03-07 at 3 41 08 PM](https://github.com/user-attachments/assets/32373e9b-767f-445f-bac5-735f3523ecb6)    
+  |*Figura 4: Señal del Microfono 1.*|    
+
+![WhatsApp Image 2025-03-07 at 3 41 08 PM (1)](https://github.com/user-attachments/assets/d295e268-a5a3-4bce-97dc-edd6a5423184)    
+  |*Figura 5: Señal del Microfono 2.*|     
+
+![WhatsApp Image 2025-03-07 at 3 41 08 PM (2)](https://github.com/user-attachments/assets/63da823f-e528-4469-a2da-9ac1108d23a7)  
+  |*Figura 6: Señal del Microfono 3.*|   
+
+  
 
 
-# Resultados:
-MICROFONO 1
-![WhatsApp Image 2025-03-07 at 11 54 16 AM](https://github.com/user-attachments/assets/394f11cf-1986-4cb0-9c73-432f3242599a)  
-
-MICROFONO 2  
-![WhatsApp Image 2025-03-07 at 11 54 29 AM](https://github.com/user-attachments/assets/881f769c-f546-4013-8310-d4cf16e4b8dd)  
-
-MICROFONO 3  
-![WhatsApp Image 2025-03-07 at 11 54 43 AM](https://github.com/user-attachments/assets/e88b5fe7-b5ed-4a99-b1a3-dd0a82b1913d)  
-
-
-
-
-ESPECIFICAR SOBRE BREAMBORMER 
 
 
 
