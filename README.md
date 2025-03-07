@@ -123,6 +123,21 @@ for i, file in enumerate(rutas_audios):
   |*Figura 6: Señal del Microfono 3.*|   
 
   
+![WhatsApp Image 2025-03-07 at 3 41 09 PM (3)](https://github.com/user-attachments/assets/9e3b8751-a836-4dea-bc36-3e8b347c07cb)  
+  |*Figura 7: Señal del Microfono 3.*|   
+
+![WhatsApp Image 2025-03-07 at 3 41 09 PM (4)](https://github.com/user-attachments/assets/1ef4a4ce-3394-422e-a98e-d50f058965d5)    
+  |*Figura 8: Señal del Microfono 3.*|   
+
+![WhatsApp Image 2025-03-07 at 3 41 09 PM (5)](https://github.com/user-attachments/assets/3b94d994-ca22-4b06-abda-2373fd886319)    
+  |*Figura 9: Señal del Microfono 3.*|   
+
+![WhatsApp Image 2025-03-07 at 3 41 26 PM](https://github.com/user-attachments/assets/240332b1-839c-484d-af93-4dfa20bcf374)    
+  |*Figura 10: Resultado de Componentes Independientes (ICA) y el Beamforming.*|     
+
+
+
+
 
 
 
