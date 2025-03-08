@@ -13,12 +13,12 @@ Para esto, Tomamos las medidas correspondientes al espacio/salon en donde se ubi
 
 Posteriormente, se realizo la ubicacion en lugares estrategicos para el optimo registro del audio para cada uno de los integrantes   
 
-![WhatsApp Image 2025-03-07 at 11 00 52 AM](https://github.com/user-attachments/assets/b61721c3-caa0-4175-949e-316d22924132)    
+![WhatsApp Image 2025-03-07 at 11 00 52 AM](https://github.com/user-attachments/assets/b61721c3-caa0-4175-949e-316d22924132)      
   |*Figura 2: Ubicaciones de los Tres (3) Microfonos para la toma de audio.*|
 
 Por ultimo, realizamos la medición de lo que sería la distancia de cada microfono hasta la persona correspondiente a cada uno (más cercana) para poder hacer un mejor analisis frente a lo que vendrian siendo nuestros resultados 
 
-![WhatsApp Image 2025-03-07 at 11 09 01 AM](https://github.com/user-attachments/assets/feb5865a-0875-4adc-869e-386ed4e6c0fe)      
+![WhatsApp Image 2025-03-07 at 11 09 01 AM](https://github.com/user-attachments/assets/feb5865a-0875-4adc-869e-386ed4e6c0fe)        
   |*Figura 3: Distancia de microfono a una fuente sonora (Persona).*|
 
 <h1 align="center"> 📄 GUIA DE USUARIO 📄 </h1>        
@@ -107,15 +107,15 @@ Tambien, genara los caracteristicos que queremos para la visualizacion de nuestr
         print(f"ERROR: No se encontró el archivo {ruta}")
  ```
 En este punto la señal recortada se grafica en el dominio del tiempo utilizando matplotlib. Se establece el color azul y se añaden las etiquetas correspondientes a los ejes para facilitar la interpretación de la gráfica:    
-![WhatsApp Image 2025-03-07 at 3 41 08 PM](https://github.com/user-attachments/assets/32373e9b-767f-445f-bac5-735f3523ecb6)        
-  |*Figura 4: Señal del Microfono 1.*|        
-     _________________________________________________________________________________________________  
-![WhatsApp Image 2025-03-07 at 3 41 08 PM (1)](https://github.com/user-attachments/assets/d295e268-a5a3-4bce-97dc-edd6a5423184)        
-  |*Figura 5: Señal del Microfono 2.*|           
-     _________________________________________________________________________________________________  
-![WhatsApp Image 2025-03-07 at 3 41 08 PM (2)](https://github.com/user-attachments/assets/63da823f-e528-4469-a2da-9ac1108d23a7)      
-  |*Figura 6: Señal del Microfono 3.*|       
+![WhatsApp Image 2025-03-07 at 3 41 08 PM](https://github.com/user-attachments/assets/32373e9b-767f-445f-bac5-735f3523ecb6)          
+  |*Figura 4: Señal del Microfono 1.*|          
      _________________________________________________________________________________________________    
+![WhatsApp Image 2025-03-07 at 3 41 08 PM (1)](https://github.com/user-attachments/assets/d295e268-a5a3-4bce-97dc-edd6a5423184)          
+  |*Figura 5: Señal del Microfono 2.*|             
+     _________________________________________________________________________________________________    
+![WhatsApp Image 2025-03-07 at 3 41 08 PM (2)](https://github.com/user-attachments/assets/63da823f-e528-4469-a2da-9ac1108d23a7)         
+  |*Figura 6: Señal del Microfono 3.*|       
+     _________________________________________________________________________________________________      
 
 Para llevar a cabo el análisis se realizó en dominio del tiempo generando gráficas del tiempo con respecto a voltaje de cada señal, y en el dominio de la frecuencia aplicando la transformada rápida de Fourier graficando de igual forma la frecuencia con respecto a su magnitud  
 Las señales de audio fueron analizadas de forma independiente con el encontrar información como la potencia que contiene cada una de ellas   
@@ -287,14 +287,14 @@ plt.legend()
 plt.grid()
 plt.show()
  ```  
-Teniendo como resultado las siguientes graficas:       
-![WhatsApp Image 2025-03-07 at 3 41 09 PM (3)](https://github.com/user-attachments/assets/9e3b8751-a836-4dea-bc36-3e8b347c07cb)    
-  |*Figura 7: La forma de onda, el espectro de frecuencia y (PSD) de la Señal del Microfono 1.*|   
-     _________________________________________________________________________________________________  
-![WhatsApp Image 2025-03-07 at 3 41 09 PM (4)](https://github.com/user-attachments/assets/1ef4a4ce-3394-422e-a98e-d50f058965d5)      
-  |*Figura 8: La forma de onda, el espectro de frecuencia y (PSD) de la Señal del Microfono 2.*|   
-     _________________________________________________________________________________________________  
-![WhatsApp Image 2025-03-07 at 3 41 09 PM (5)](https://github.com/user-attachments/assets/3b94d994-ca22-4b06-abda-2373fd886319)        
+Teniendo como resultado las siguientes graficas:         
+![WhatsApp Image 2025-03-07 at 3 41 09 PM (3)](https://github.com/user-attachments/assets/9e3b8751-a836-4dea-bc36-3e8b347c07cb)      
+  |*Figura 7: La forma de onda, el espectro de frecuencia y (PSD) de la Señal del Microfono 1.*|     
+     _________________________________________________________________________________________________    
+![WhatsApp Image 2025-03-07 at 3 41 09 PM (4)](https://github.com/user-attachments/assets/1ef4a4ce-3394-422e-a98e-d50f058965d5)        
+  |*Figura 8: La forma de onda, el espectro de frecuencia y (PSD) de la Señal del Microfono 2.*|     
+     _________________________________________________________________________________________________    
+![WhatsApp Image 2025-03-07 at 3 41 09 PM (5)](https://github.com/user-attachments/assets/3b94d994-ca22-4b06-abda-2373fd886319)          
   |*Figura 9: La forma de onda, el espectro de frecuencia y (PSD) de la Señal del Microfono 3.*|     
 
 ___________________________________  
@@ -305,7 +305,7 @@ ___________________________________
   |*Figura 10: Resultados de SNR, Resultado de Componentes Independientes (ICA) y el Beamforming.*|       
   
 ## SNR:  
-Se evidencia inicialmente la carga de los audios con sus respectivas gráficas en donde podemos observar el tiempo de sonido del vacío y el tiempo en que hay una voz se grafica independiente el sonido vacío de 20 segundos, de esta grafica podemos hallar la potencia de ruido valor para calcular el SNR de cada señal del micrófono 1 obtuvimos un SNR de 14.57 dB, micrófono 2 SNR de 8.21dB y el micrófono 3 el SNR es de 10.96dB
+Se evidencia inicialmente la carga de los audios con sus respectivas gráficas en donde podemos observar el tiempo de sonido del vacío y el tiempo en que hay una voz se grafica independiente el sonido vacío de 20 segundos, de esta grafica podemos hallar la potencia de ruido valor para calcular el SNR de cada señal del **micrófono 1** obtuvimos un SNR de 14.57 dB, **micrófono 2** SNR de 8.21dB y el **micrófono 3** el SNR es de 10.96dB.  
 Estos resultados son comparados con bibliografía ya que el SNR que se espera obtener de un micrófono de celular oscila entre 10 a 20 dB, el resultado del micrófono 2 es más bajo de lo normal y asociamos esto a daños del micrófono o desactualización debido que la toma fue de un celular un poco más viejo.   
 
 ## Espectro de Frecuencia:
@@ -318,16 +318,21 @@ Con respecto al eje X Frecuencia en Hz, escala lineal, representa las frecuencia
 🔴 **Micrófono 1**: El espectro muestra picos concentrados en una banda alrededor de los 100 Hz-1 kHz , esto indica que la señal captada tiene componentes en ese rango de frecuencias, posiblemente un sonido, no se observan muchas frecuencias altas, lo que sugiere que la señal es más limpia o que el micrófono tiene menor sensibilidad en frecuencias más altas.    
 🟣 **Micrófono 2**: Indica presencia de picos en el rango de 100 Hz a 1 kHz nos brinda información de que el sonido captado tiene componentes dominantes en esta banda, este rango es típico de voces humanas que fue lo que se midió, este micrófono captó una señal con más energía en variaciones esto puede deberse a que el micrófono esté más cerca de la persona o captó más ruido ambiental.  
 🟢 **Micrófono 3**: Se observa un pico muy marcado en la zona de 100 Hz , lo que indica que esta frecuencia es la más fuerte en la señal captada esto sugiere que el micrófono registró un sonido con un tono grave predominante, que sería el golpe del que se habló anteriormente además del pico dominante, hay varias frecuencias con amplitudes más bajas que se extienden hasta los 3 kHz esto indica que el sonido no es completamente puro este micrófono muestra menos energía en frecuencias más altas esto puede indicar que captó una señal más enfocada en los tonos graves o que su respuesta en frecuencias altas es menor captó una señal con un tono grave predominante , con un fuerte pico en 100 Hz y algunos armónicos en el rango de 100 Hz-3 kHz.    
-_______________________________________   
+  
 ## Densidad Espectral de Potencia
 Con respecto a estas graficas, todas siguen una tendencia descendente a medida que aumenta la frecuencia, la forma de la curva sugiere que hay un filtro natural o una limitación en el sistema que atenúa las frecuencias más altas analizando región de medias frecuencias (10² - 10³ Hz) evidenciamos que aquí es donde se observan diferencias más notables ya que en el **MICRÓFONO 1 y MICRÓFONO 3**, la curva muestra una ligera caída progresiva con pequeñas fluctuaciones mientras que **El MICRÓFONO 2** mantiene una caída más uniforme y menos oscilaciones. El análisis entre región de altas frecuencias (10³ - 10⁴ Hz) se observa una caída más pronunciada en todos los micrófonos, lo que sugiere una pérdida de potencia en altas frecuencias debido a la respuesta del sistema o las características del micrófono y **El MICRÓFONO 3** muestra más fluctuaciones en esta región antes de la caída final, cerca de 10⁴ Hz en todos los casos, hay una caída abrupta que indica el límite del ancho de banda del sistema. La representación logarítmica resalta que la energía está más concentrada en bajas frecuencias y que la atenuación en altas frecuencias es un patrón común en los tres micrófonos. Sin embargo, **MICRÓFONO 2** parece ser el más estable en todo el espectro.  
 
- 
+## Beamformed
+Como se puede saber, el Beamforming combina las señales que son captadas por multiples microfonos para la mejora y atenuar el ruido que viene de "direcciones" que no son desadas, en nuestro caso el valor resultante correspondio a **-10.56dB**, pues el valor negativo obtenido nos indica que el beamforming no mejoró la relación señal-ruido (SNR), sino que la "empeoró considerablemente" ya que al momento de escuchar nuestro audio perdio un poco de nitides en la voz.   
+Este comportamiento podria tratarse posiblemente por diferencias que puedan tener las caracteristicas de los microfonos, ya que en este caso pudo haber sido que uno de los tres microfonos tienen respuestas de frecuencias distintas, de esta manera las señales al momento de combinarse no se encontrrian "alineadas", de esta manera genera perdida de la informacion de los audios. Otra posuble causa en nuestro caso pudo haber sido que el lugar era muy pequeño por lo que el Beamformed pudo amplificar las señales no desadas en lugar de atenuarlas o incluso por la posicion de los microfonos y las personas pudo haber afectado la calidad de los tres audios y su frecuencia, por lo que sugerimos que las señales de los micrófonos no estaban bien alineadas o que la relación señal-ruido (SNR) inicial ya era muy baja, lo que hizo que la combinación de señales amplificara el ruido en lugar de reducirlo por lo que notablemente el Beformed pudo haber resultado "afectado" y por esta razon haber sido Negativo respectivamente. 
 
-  
+## ICA
+Por ultimo pero no menos importante, tenemos el Análisis de Componentes Independientes (ICA), teniendo nuevamente en cuenta que con ella se descomponen varias señales juntadas en componentes que son estadisticamente independientes, en nuestro caso obtuvimos un valor de **20.38 dB** que en (SNR) nos mostraria una mejora con respecto a la calidad de nuestra señal despues de haber utilizado el ICA por lo que podriamos deducir que este logro seperar la señal de interes del ruido (no mucho pero si se nota la diferencia frente a la nitides de la voz de interes) del ruido de fondo siendo así capaz de identificar la señal de voz como una fuente independiente del ruido, logrando aislarla de las otras señales captadas por los micrófonos, teniendo tambien en cuenta que la señal de interés (voz) que fue la del **MICROFONO 3** fue la más fuerte a comparación de el ruido en ciertas frecuencias, lo que facilitó su identificación por parte del algoritmo de ICA.
 
+**Conclusión - Beamformed & ICA**:  
+El beamforming no fue efectivo en este caso ya que de hecho, deterioró la calidad de la señal, lo que puede significar errores en el cálculo del retraso, diferencias en las características de los micrófonos o ruido ambiental fuerte. A comparacion del ICA que superó las limitaciones del beamforming, ya que logro una separación efectiva de la señal de interés y una mejora sustancial en el SNR. Este comportamiento es eficiente con las expectativas que teniamos, ya que el ICA es una técnica más "precisa" para separar las señales que estan mezcladas y que tienen diferentes características estadísticas.  
 
-
+___________________________________   
 ## Licencia 
 Open Data Commons Attribution License v1.0
 
