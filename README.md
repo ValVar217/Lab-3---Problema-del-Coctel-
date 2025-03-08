@@ -76,14 +76,7 @@ def calcular_snr(signal):
     return snr, signal
  ```
 **Analisis 👆**  
-La adquisición de la señal se dio por medio de micrófonos de celular por un tiempo de 20segundos teniendo en cuenta que en todos se configuró una frecuencia de muestreo de 44.1 kHz se puede encontrar la configuración en audio.set_frame_rate(44100), en cuanto a los niveles de cuantificación es importante conocer que el audio proviene de archivos MP3, que ya están comprimidos y cuantizados con una resolución específica en el momento de cargar el audio con AudioSegment.from_file(), este está en un formato de enteros. Luego, al extraer las muestras con np.array(audio_recortado.get_array_of_samples(), dtype=np.float32), las muestras se convierten a valores en punto flotante de 32 bits permitiéndonos ajustan el rango de valores entre -1 y 1. El SNR es calculado por medio de las potencias, calcular_snr(signal), se calcula la potencia de la señal se eleva al cuadrado cada muestra de la señal y luego se saca el promedio, obteniendo la potencia media de la señal, para estimar el ruido, se aplica la STFT para obtener el espectro de frecuencias de la señal se calcula la potencia promedio del ruido elevándolo al cuadrado y sacando el promedio finalmente el SNR se calcula según su ecuación.  
-
-Complementando lo anterior, sobre los archivos de audio, se calcula el SNR y grafica la señal de audio sin ruido:  
-
-**Calculo del SNR**  
-Hay que recordar que la SNR es una métrica que cuantifica la calidad de una señal en presencia de ruido. Se define como la relación entre la potencia de la señal útil y la potencia del ruido, expresada en decibeles (dB):   
-
- ![image](https://github.com/user-attachments/assets/ffad5937-9c24-4e59-9ea3-dce5cb31ee35)   
+La adquisición de la señal se dio por medio de micrófonos de celular por un tiempo de 20segundos teniendo en cuenta que en todos se configuró una frecuencia de muestreo de 44.1 kHz se puede encontrar la configuración en audio.set_frame_rate(44100), en cuanto a los niveles de cuantificación es importante conocer que el audio proviene de archivos MP3, que ya están comprimidos y cuantizados con una resolución específica en el momento de cargar el audio con AudioSegment.from_file(), este está en un formato de enteros. Luego, al extraer las muestras con np.array(audio_recortado.get_array_of_samples(), dtype=np.float32), las muestras se convierten a valores en punto flotante de 32 bits permitiéndonos ajustan el rango de valores entre -1 y 1. El SNR es calculado por medio de las potencias, calcular_snr(signal), se calcula la potencia de la señal se eleva al cuadrado cada muestra de la señal y luego se saca el promedio, obteniendo la potencia media de la señal, para estimar el ruido, se aplica la STFT para obtener el espectro de frecuencias de la señal se calcula la potencia promedio del ruido elevándolo al cuadrado y sacando el promedio finalmente el SNR se calcula según su ecuación.    
 
 ```python  
 for ruta in rutas_audios:
@@ -165,16 +158,21 @@ def beamforming(signals, delay):
         beamformed_signal += np.roll(signals[:, i], delay_i)
     return beamformed_signal / num_mics
  ```
-Hay que tener presente que para ello la función beamforming aplica un retraso a cada señal y las combina para reforzar las componentes comunes y cancelar el ruido no correlacionado.
+Hay que tener presente que para ello la función beamforming aplica un retraso a cada señal y las combina para reforzar las componentes comunes y cancelar el ruido no correlacionado.  
 
+Complementando lo anterior, sobre los archivos de audio, se calcula el SNR y grafica la señal de audio sin ruido:    
+**Calculo del SNR**  
+Hay que recordar que la SNR es una métrica que cuantifica la calidad de una señal en presencia de ruido. Se define como la relación entre la potencia de la señal útil y la potencia del ruido, expresada en decibeles (dB):     
+ ![image](https://github.com/user-attachments/assets/ffad5937-9c24-4e59-9ea3-dce5cb31ee35)     
+ 
 ```python
 # Función para calcular SNR
 def calcular_snr(señal, ruido):
     potencia_señal = np.mean(señal**2) if np.mean(señal**2) > 0 else 1e-10
     potencia_ruido = np.mean(ruido**2) if np.mean(ruido**2) > 0 else 1e-10
     return 10 * np.log10(potencia_señal / potencia_ruido)  
- ``` 
-
+ ```   
+El siguiente bloque de código se encarga de realizar la carga y preparación de los archivos de audio que serán utilizados en el procesamiento posterior, pues en este paso es fundamental para garantizar que las señales estén correctamente alineadas y tengan las mismas características (como la tasa de muestreo y la longitud) antes de aplicar el beamforming y el ICA.  
 ```python
 # --- Carga de audios ---
 muestras_audios = []
@@ -194,9 +192,10 @@ for ruta in rutas_audios:
 # Asegurar que todas las señales tengan la misma longitud
 longitud_max = max(len(y) for y in muestras_audios)
 muestras_audios = [np.pad(y, (0, longitud_max - len(y))) for y in muestras_audios]
- ```
-
-
+ ```  
+___________________________________   
+**Aplicación del beamforming**:    
+Ahora se tiene el siguiente fragmento que corresponde al paso de procesamiento de señales mediante beamforming y la reducción de ruido, esto se hace ya que es importante para mejorar la calidad de la señal, ya que permite concentrar la captación de sonido en una dirección específica y filtrar interferencias para obtener una señal más clara y con menos contaminación:    
 ```python
 # Convertir a array y calcular retraso
 audio_mix = np.vstack(muestras_audios).T
@@ -211,8 +210,9 @@ output_file_beamformed = os.path.join(output_dir, "señal_beamformed.wav")
 sf.write(output_file_beamformed, beamformed_signal_denoised, sample_rate)
 print(f"Señal beamformed guardada en: {output_file_beamformed}") 
  ```  
-___________________________________  
-**Aplicación del ICA**  
+___________________________________    
+**Aplicación del ICA**    
+Luego tenemos la implementacion del Análisis de Componentes Independientes **(ICA)** para poder separar las  señales mezcladas. El ICA es para utilizar en señales que están combinadas y se desea extraer cada fuente de manera independiente.  
 
 ```python
 # Aplicar ICA
@@ -228,7 +228,7 @@ output_file_ica = os.path.join(output_dir, "señal_ica.wav")
 sf.write(output_file_ica, señal_ica_reducida, sample_rate_reducido)
 print(f"Señal ICA guardada en: {output_file_ica}")
  ```
-
+El siguiente fragmento tiene como proposito realizar el cálculo de la relación señal-ruido (SNR) después de aplicar las técnicas de beamforming e ICA para poder optener el resultado que esperamos frente al comportamiento de nuestras señales (Audios):   
 ```python
 # Cálculo de SNR
 ruido_estimado = audio_mix[:, 1] - audio_mix[:, 0]
@@ -237,7 +237,7 @@ snr_ica = calcular_snr(señal_ica, ruido_estimado)
 print(Fore.BLUE + f"SNR después de Beamforming: {snr_beam:.2f} dB")
 print(Fore.BLUE + f"SNR después de ICA: {snr_ica:.2f} dB")
  ```
-
+Por ultimo tenemos que esta parte de codigo a continuación está dedicado a la visualización gráfica de las señales captadas por los micrófonos y de las señales procesadas mediante técnicas de beamforming e ICA, la combinación de forma de onda, **Espectro de frecuencia** y **PSD** que nos permite evaluar la efectividad de las técnicas de procesamiento y comparar la calidad de las señales obtenidas:  
 ```python
 # --- Graficación de señales individuales ---
 for i, y in enumerate(muestras_audios):
