@@ -8,18 +8,21 @@ Para esto, Tomamos las medidas correspondientes al espacio/salon en donde se ubi
 🔵 Ancho: 181 cm  
 🔵 Largo: 146 cm     
 
-![WhatsApp Image 2025-03-07 at 10 55 13 AM](https://github.com/user-attachments/assets/0018fbec-6fe0-44b5-b9ed-eb313485d229)        
-  |*Figura 1: Evidencia de medicion del salon para la toma de audio.*|  
+![WhatsApp Image 2025-03-07 at 10 55 13 AM](https://github.com/user-attachments/assets/0018fbec-6fe0-44b5-b9ed-eb313485d229)          
+  |*Figura 1: Evidencia de medicion del salon para la toma de audio.*|    
 
 Posteriormente, se realizo la ubicacion en lugares estrategicos para el optimo registro del audio para cada uno de los integrantes   
 
-![WhatsApp Image 2025-03-07 at 11 00 52 AM](https://github.com/user-attachments/assets/b61721c3-caa0-4175-949e-316d22924132)      
-  |*Figura 2: Ubicaciones de los Tres (3) Microfonos para la toma de audio.*|
+![WhatsApp Image 2025-03-07 at 11 00 52 AM](https://github.com/user-attachments/assets/b61721c3-caa0-4175-949e-316d22924132)        
+  |*Figura 2: Ubicaciones de los Tres (3) Microfonos para la toma de audio.*|  
 
-Por ultimo, realizamos la medición de lo que sería la distancia de cada microfono hasta la persona correspondiente a cada uno (más cercana) para poder hacer un mejor analisis frente a lo que vendrian siendo nuestros resultados 
+Por ultimo, realizamos la medición de lo que sería la distancia de cada microfono hasta la persona correspondiente a cada uno (más cercana) para poder hacer un mejor analisis frente a lo que vendrian siendo nuestros resultados:  
+🔴 **Micrófono 1**: 35 Cm de el microfono hasta Lizeth    
+🟣 **Micrófono 2**: 32.5 Cm de el microfono hasta Valentina  
+🟢 **Micrófono 3**: 66 Cm de el micrfono hasta Esteban  
 
-![WhatsApp Image 2025-03-07 at 11 09 01 AM](https://github.com/user-attachments/assets/feb5865a-0875-4adc-869e-386ed4e6c0fe)        
-  |*Figura 3: Distancia de microfono a una fuente sonora (Persona).*|
+![WhatsApp Image 2025-03-07 at 11 09 01 AM](https://github.com/user-attachments/assets/feb5865a-0875-4adc-869e-386ed4e6c0fe)          
+  |*Figura 3: Distancia de microfono a una fuente sonora (Persona).*|  
 
 <h1 align="center"> 📄 GUIA DE USUARIO 📄 </h1>        
 
@@ -100,15 +103,19 @@ Tambien, genara los caracteristicos que queremos para la visualizacion de nuestr
         print(f"ERROR: No se encontró el archivo {ruta}")
  ```
 En este punto la señal recortada se grafica en el dominio del tiempo utilizando matplotlib. Se establece el color azul y se añaden las etiquetas correspondientes a los ejes para facilitar la interpretación de la gráfica:    
-![WhatsApp Image 2025-03-07 at 3 41 08 PM](https://github.com/user-attachments/assets/32373e9b-767f-445f-bac5-735f3523ecb6)          
-  |*Figura 4: Señal del Microfono 1.*|          
-     _________________________________________________________________________________________________    
-![WhatsApp Image 2025-03-07 at 3 41 08 PM (1)](https://github.com/user-attachments/assets/d295e268-a5a3-4bce-97dc-edd6a5423184)          
-  |*Figura 5: Señal del Microfono 2.*|             
-     _________________________________________________________________________________________________    
-![WhatsApp Image 2025-03-07 at 3 41 08 PM (2)](https://github.com/user-attachments/assets/63da823f-e528-4469-a2da-9ac1108d23a7)         
-  |*Figura 6: Señal del Microfono 3.*|       
+![WhatsApp Image 2025-03-07 at 3 41 08 PM](https://github.com/user-attachments/assets/32373e9b-767f-445f-bac5-735f3523ecb6)              
+
+  |*Figura 4: Señal del Microfono 1.*|              
+     _________________________________________________________________________________________________  
+     
+![WhatsApp Image 2025-03-07 at 3 41 08 PM (1)](https://github.com/user-attachments/assets/d295e268-a5a3-4bce-97dc-edd6a5423184)              
+
+  |*Figura 5: Señal del Microfono 2.*|                
      _________________________________________________________________________________________________      
+     
+![WhatsApp Image 2025-03-07 at 3 41 08 PM (2)](https://github.com/user-attachments/assets/63da823f-e528-4469-a2da-9ac1108d23a7)           
+  |*Figura 6: Señal del Microfono 3.*|         
+     _________________________________________________________________________________________________        
 
 Para llevar a cabo el análisis se realizó en dominio del tiempo generando gráficas del tiempo con respecto a voltaje de cada señal, y en el dominio de la frecuencia aplicando la transformada rápida de Fourier graficando de igual forma la frecuencia con respecto a su magnitud  
 Las señales de audio fueron analizadas de forma independiente con el encontrar información como la potencia que contiene cada una de ellas   
@@ -291,12 +298,14 @@ Teniendo como resultado las siguientes graficas:
 ![WhatsApp Image 2025-03-07 at 3 41 09 PM (3)](https://github.com/user-attachments/assets/9e3b8751-a836-4dea-bc36-3e8b347c07cb)      
   |*Figura 7: La forma de onda, el espectro de frecuencia y (PSD) de la Señal del Microfono 1.*|     
      _________________________________________________________________________________________________    
-![WhatsApp Image 2025-03-07 at 3 41 09 PM (4)](https://github.com/user-attachments/assets/1ef4a4ce-3394-422e-a98e-d50f058965d5)        
-  |*Figura 8: La forma de onda, el espectro de frecuencia y (PSD) de la Señal del Microfono 2.*|     
-     _________________________________________________________________________________________________    
-![WhatsApp Image 2025-03-07 at 3 41 09 PM (5)](https://github.com/user-attachments/assets/3b94d994-ca22-4b06-abda-2373fd886319)          
-  |*Figura 9: La forma de onda, el espectro de frecuencia y (PSD) de la Señal del Microfono 3.*|     
+![WhatsApp Image 2025-03-07 at 3 41 09 PM (4)](https://github.com/user-attachments/assets/1ef4a4ce-3394-422e-a98e-d50f058965d5)          
 
+  |*Figura 8: La forma de onda, el espectro de frecuencia y (PSD) de la Señal del Microfono 2.*|       
+     _________________________________________________________________________________________________ 
+     
+![WhatsApp Image 2025-03-07 at 3 41 09 PM (5)](https://github.com/user-attachments/assets/3b94d994-ca22-4b06-abda-2373fd886319)             
+
+  |*Figura 9: La forma de onda, el espectro de frecuencia y (PSD) de la Señal del Microfono 3.*|         
 ___________________________________  
 
 <h1 align="center"> RESULTADOS ✅ </h1>  
