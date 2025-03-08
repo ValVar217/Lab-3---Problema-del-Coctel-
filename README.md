@@ -21,9 +21,9 @@ Por ultimo, realizamos la medición de lo que sería la distancia de cada microf
 ![WhatsApp Image 2025-03-07 at 11 09 01 AM](https://github.com/user-attachments/assets/feb5865a-0875-4adc-869e-386ed4e6c0fe)      
   |*Figura 3: Distancia de microfono a una fuente sonora (Persona).*|
 
-<h1 align="center"> GUIA DE USUARIO </h1>      
+<h1 align="center"> 📄 GUIA DE USUARIO 📄 </h1>        
 
-## Analisis y Resultados
+## Analisis y Resultados   
 Para iniciar, en el encabezado de nuestro codigo podemos encontrar la inicicalizacion de las librerias correspondientes para el optimo funcionamiento del codigo para el procesamiento de señales de audio en la práctica de laboratorio, se utilizo un conjunto de librerías especializadas en análisis y manipulación de señales sonoras: 
 ```python
 import os
@@ -36,14 +36,14 @@ from pydub import AudioSegment
 import noisereduce as nr
  ```
 Teniendo en cuenta esta primera parte de codigo, es importante que podamos identificar que funcion tiene cada una de las librerias utilizadas, por lo que tenemos que:  
-▫️**os** → Nos permite el anejo de archivos y rutas.  
-▫️**librosa** → Es Para el procesamiento del Audio 
-▫️**librosa.display** → Se utiliza para el procesamiento de audio.  
-▫️**numpy (np)** → Se usa para el manejo de arrays y operaciones matemáticas.    
-▫️**matplotlib.pyplot** → Se emplea para la generación de gráficos y visualización de datos.   
-▫️**soundfile** → Facilita la lectura y escritura de archivos de audio.
-▫️**pydub** → Esta fue utilizada para la conversión y manipulación de archivos de audio en formato de MP3.    
-▫️**noisereduce** → Ayuda a la reducción de ruido en las señales de audio, mejorando la calidad de los audios al eliminar sonidos no deseados.    
+▫️**os** → Nos permite el anejo de archivos y rutas.    
+▫️**librosa** → Es Para el procesamiento del Audio   
+▫️**librosa.display** → Se utiliza para el procesamiento de audio.    
+▫️**numpy (np)** → Se usa para el manejo de arrays y operaciones matemáticas.      
+▫️**matplotlib.pyplot** → Se emplea para la generación de gráficos y visualización de datos.     
+▫️**soundfile** → Facilita la lectura y escritura de archivos de audio.  
+▫️**pydub** → Esta fue utilizada para la conversión y manipulación de archivos de audio en formato MP3.   
+▫️**noisereduce** → Ayuda a la reducción de ruido en las señales de audio, mejorando la calidad de los audios al eliminar sonidos no deseados.      
 
 Posteriormente tenemos una lista llamada "rutas_audios" que almacena las rutas de acceso a los archivos de audio capturados por diferentes micrófonos.
 En este caso, se tienen tres archivos en formato MP3 correspondientes a grabaciones realizadas con tres micrófonos, esto se hace con el fin de subir los debidos audios al programa y poder realizar los debidos procedimientos con ellos.
@@ -106,16 +106,16 @@ Tambien, genara los caracteristicos que queremos para la visualizacion de nuestr
     else:
         print(f"ERROR: No se encontró el archivo {ruta}")
  ```
-En este punto la señal recortada se grafica en el dominio del tiempo utilizando matplotlib. Se establece el color azul y se añaden las etiquetas correspondientes a los ejes para facilitar la interpretación de la gráfica:  
-![WhatsApp Image 2025-03-07 at 3 41 08 PM](https://github.com/user-attachments/assets/32373e9b-767f-445f-bac5-735f3523ecb6)      
-  |*Figura 4: Señal del Microfono 1.*|      
-     _________________________________________________________________________________________________
-![WhatsApp Image 2025-03-07 at 3 41 08 PM (1)](https://github.com/user-attachments/assets/d295e268-a5a3-4bce-97dc-edd6a5423184)      
-  |*Figura 5: Señal del Microfono 2.*|         
-     _________________________________________________________________________________________________
-![WhatsApp Image 2025-03-07 at 3 41 08 PM (2)](https://github.com/user-attachments/assets/63da823f-e528-4469-a2da-9ac1108d23a7)    
-  |*Figura 6: Señal del Microfono 3.*|     
+En este punto la señal recortada se grafica en el dominio del tiempo utilizando matplotlib. Se establece el color azul y se añaden las etiquetas correspondientes a los ejes para facilitar la interpretación de la gráfica:    
+![WhatsApp Image 2025-03-07 at 3 41 08 PM](https://github.com/user-attachments/assets/32373e9b-767f-445f-bac5-735f3523ecb6)        
+  |*Figura 4: Señal del Microfono 1.*|        
      _________________________________________________________________________________________________  
+![WhatsApp Image 2025-03-07 at 3 41 08 PM (1)](https://github.com/user-attachments/assets/d295e268-a5a3-4bce-97dc-edd6a5423184)        
+  |*Figura 5: Señal del Microfono 2.*|           
+     _________________________________________________________________________________________________  
+![WhatsApp Image 2025-03-07 at 3 41 08 PM (2)](https://github.com/user-attachments/assets/63da823f-e528-4469-a2da-9ac1108d23a7)      
+  |*Figura 6: Señal del Microfono 3.*|       
+     _________________________________________________________________________________________________    
 
 Para llevar a cabo el análisis se realizó en dominio del tiempo generando gráficas del tiempo con respecto a voltaje de cada señal, y en el dominio de la frecuencia aplicando la transformada rápida de Fourier graficando de igual forma la frecuencia con respecto a su magnitud  
 Las señales de audio fueron analizadas de forma independiente con el encontrar información como la potencia que contiene cada una de ellas   
@@ -173,8 +173,7 @@ def calcular_snr(señal, ruido):
     potencia_señal = np.mean(señal**2) if np.mean(señal**2) > 0 else 1e-10
     potencia_ruido = np.mean(ruido**2) if np.mean(ruido**2) > 0 else 1e-10
     return 10 * np.log10(potencia_señal / potencia_ruido)  
- ```
-
+ ``` 
 
 ```python
 # --- Carga de audios ---
@@ -191,10 +190,7 @@ for ruta in rutas_audios:
             raise ValueError("Las tasas de muestreo de los audios no coinciden.")
     else:
         print(f"ERROR: No se encontró el archivo {ruta}")
- ```
 
-
-```python
 # Asegurar que todas las señales tengan la misma longitud
 longitud_max = max(len(y) for y in muestras_audios)
 muestras_audios = [np.pad(y, (0, longitud_max - len(y))) for y in muestras_audios]
@@ -205,34 +201,25 @@ muestras_audios = [np.pad(y, (0, longitud_max - len(y))) for y in muestras_audio
 # Convertir a array y calcular retraso
 audio_mix = np.vstack(muestras_audios).T
 retraso = calcular_retraso(distancias, velocidad_sonido, sample_rate)
- ```
 
-
-```python
 # Aplicar Beamforming
 beamformed_signal = beamforming(audio_mix, retraso)
 beamformed_signal_denoised = nr.reduce_noise(y=beamformed_signal, sr=sample_rate, stationary=True)
- ```
 
-
-
-```python
 # Guardar señal procesada
 output_file_beamformed = os.path.join(output_dir, "señal_beamformed.wav")
 sf.write(output_file_beamformed, beamformed_signal_denoised, sample_rate)
 print(f"Señal beamformed guardada en: {output_file_beamformed}") 
- ```
-
+ ```  
+___________________________________  
+**Aplicación del ICA**  
 
 ```python
 # Aplicar ICA
 ica = FastICA(n_components=2)
 señales_separadas = ica.fit_transform(audio_mix)
 señal_ica = señales_separadas[:, 0]
- ```
 
-
-```python
 # Reducir la frecuencia de muestreo de la señal ICA
 sample_rate_reducido = sample_rate // 2
 señal_ica_reducida = librosa.resample(señal_ica, orig_sr=sample_rate, target_sr=sample_rate_reducido)
@@ -242,7 +229,6 @@ sf.write(output_file_ica, señal_ica_reducida, sample_rate_reducido)
 print(f"Señal ICA guardada en: {output_file_ica}")
  ```
 
-
 ```python
 # Cálculo de SNR
 ruido_estimado = audio_mix[:, 1] - audio_mix[:, 0]
@@ -251,7 +237,6 @@ snr_ica = calcular_snr(señal_ica, ruido_estimado)
 print(Fore.BLUE + f"SNR después de Beamforming: {snr_beam:.2f} dB")
 print(Fore.BLUE + f"SNR después de ICA: {snr_ica:.2f} dB")
  ```
-
 
 ```python
 # --- Graficación de señales individuales ---
@@ -290,20 +275,7 @@ for i, y in enumerate(muestras_audios):
 
     plt.tight_layout(pad=3.0)
     plt.show()
- ```
-Teniendo como resultado las siguientes graficas:     
 
-![WhatsApp Image 2025-03-07 at 3 41 09 PM (3)](https://github.com/user-attachments/assets/9e3b8751-a836-4dea-bc36-3e8b347c07cb)    
-  |*Figura 7: La forma de onda, el espectro de frecuencia y (PSD) de la Señal del Microfono 1.*|   
-     _________________________________________________________________________________________________  
-![WhatsApp Image 2025-03-07 at 3 41 09 PM (4)](https://github.com/user-attachments/assets/1ef4a4ce-3394-422e-a98e-d50f058965d5)      
-  |*Figura 8: La forma de onda, el espectro de frecuencia y (PSD) de la Señal del Microfono 2.*|   
-     _________________________________________________________________________________________________  
-![WhatsApp Image 2025-03-07 at 3 41 09 PM (5)](https://github.com/user-attachments/assets/3b94d994-ca22-4b06-abda-2373fd886319)        
-  |*Figura 9: La forma de onda, el espectro de frecuencia y (PSD) de la Señal del Microfono 3.*|   
-     _________________________________________________________________________________________________
-
-```python
 # Graficar comparación de señales procesadas
 plt.figure(figsize=(12, 6))
 plt.plot(beamformed_signal_denoised, label="Señal Beamformed", alpha=0.7)
@@ -314,24 +286,45 @@ plt.ylabel("Amplitud")
 plt.legend()
 plt.grid()
 plt.show()
- ```
+ ```  
+Teniendo como resultado las siguientes graficas:       
+![WhatsApp Image 2025-03-07 at 3 41 09 PM (3)](https://github.com/user-attachments/assets/9e3b8751-a836-4dea-bc36-3e8b347c07cb)    
+  |*Figura 7: La forma de onda, el espectro de frecuencia y (PSD) de la Señal del Microfono 1.*|   
+     _________________________________________________________________________________________________  
+![WhatsApp Image 2025-03-07 at 3 41 09 PM (4)](https://github.com/user-attachments/assets/1ef4a4ce-3394-422e-a98e-d50f058965d5)      
+  |*Figura 8: La forma de onda, el espectro de frecuencia y (PSD) de la Señal del Microfono 2.*|   
+     _________________________________________________________________________________________________  
+![WhatsApp Image 2025-03-07 at 3 41 09 PM (5)](https://github.com/user-attachments/assets/3b94d994-ca22-4b06-abda-2373fd886319)        
+  |*Figura 9: La forma de onda, el espectro de frecuencia y (PSD) de la Señal del Microfono 3.*|     
 
-# RESULTADOS  
+___________________________________  
+
+<h1 align="center"> RESULTADOS ✅ </h1>  
+
+![WhatsApp Image 2025-03-07 at 3 41 26 PM (1)](https://github.com/user-attachments/assets/e1b0b706-28d7-4ab9-b354-e6c83db6d067)  
+  |*Figura 10: Resultados de SNR, Resultado de Componentes Independientes (ICA) y el Beamforming.*|       
+  
+## SNR:  
 Se evidencia inicialmente la carga de los audios con sus respectivas gráficas en donde podemos observar el tiempo de sonido del vacío y el tiempo en que hay una voz se grafica independiente el sonido vacío de 20 segundos, de esta grafica podemos hallar la potencia de ruido valor para calcular el SNR de cada señal del micrófono 1 obtuvimos un SNR de 14.57 dB, micrófono 2 SNR de 8.21dB y el micrófono 3 el SNR es de 10.96dB
-Estos resultados son comparados con bibliografía ya que el SNR que se espera obtener de un micrófono de celular oscila entre 10 a 20 dB, el resultado del micrófono 2 es más bajo de lo normal y asociamos esto a daños del micrófono o desactualización debido que la toma fue de un celular un poco más viejo.  
+Estos resultados son comparados con bibliografía ya que el SNR que se espera obtener de un micrófono de celular oscila entre 10 a 20 dB, el resultado del micrófono 2 es más bajo de lo normal y asociamos esto a daños del micrófono o desactualización debido que la toma fue de un celular un poco más viejo.   
 
-Se prepresenta en la segunda gráfica colo rojo  el Espectro de Frecuencia, que muestra la Transformada de Fourier (FFT) de la señal en una escala lineal.realizamos el análisis para cada micrófono: Micrófono 1 encontramos que la máxima magnitud que presenta es alrededor de 2000 esto debido a la que la voz de la persona sexo femenino es un poco más tenue y la ubicación de distancia que tenía del micrófono, el micrófono 2 presenta una magnitud máxima cercana a 5000 pero está magnitud se mantiene medianamente constante con respecto a las otras señales asociamos esto a qué la persona de sexo masculino cuenta con un tono de voz mucho más fuerte con respecto a los otros y mantuvo contante su tono de voz, también su distancia con respecto al micrófono, micrófono 3 presenta una magnitud máxima de aproximadamente 2500, presenta un pico mucho más alto pero no duradero debido a que fue un golpe momentáneo que se le realizó al micrófono, luego de esto mantiene su magnitud entre 1000 y 2500, realizamos la comparación con el micrófono 1 e identificamos la importancia de la distancia y ubicación de la persona con respecto al micrófono ya que en los dos son personas de sexo femenino pero el micrófono 3 la persona estaba más cerca de este.   
+## Espectro de Frecuencia:
+Se prepresenta en la segunda gráfica colo rojo, pues este muestra la Transformada de Fourier (FFT) de la señal en una escala lineal. Realizamos el análisis para cada micrófono:   
+🔴 **Micrófono 1** : Encontramos que la máxima magnitud que presenta es alrededor de 2000 esto debido a la que la voz de la persona sexo femenino es un poco más tenue y la ubicación de distancia que tenía del micrófono.    
+🟣 **Micrófono 2**: Se resenta una magnitud máxima cercana a 5000 pero está magnitud se mantiene medianamente constante con respecto a las otras señales asociamos esto a qué la persona de sexo masculino cuenta con un tono de voz mucho más fuerte con respecto a los otros y mantuvo contante su tono de voz, también su distancia con respecto al micrófono.    
+🟢 **Micrófono 3** : presenta una magnitud máxima de aproximadamente 2500, presenta un pico mucho más alto pero no duradero debido a que fue un golpe momentáneo que se le realizó al micrófono, luego de esto mantiene su magnitud entre 1000 y 2500, realizamos la comparación con el micrófono 1 e identificamos la importancia de la distancia y ubicación de la persona con respecto al micrófono ya que en los dos son personas de sexo femenino pero el micrófono 3 la persona estaba más cerca de este.       
 
-Con respecto al eje X Frecuencia en Hz, escala lineal, representa las frecuencias presentes en la señal. La escala es logarítmica, lo que permite visualizar mejor un amplio rango de frecuencia analizando una a una las señales encontramos que Micrófono 1 el espectro muestra picos concentrados en una banda alrededor de los 100 Hz-1 kHz , esto indica que la señal captada tiene componentes en ese rango de frecuencias, posiblemente un sonido, no se observan muchas frecuencias altas, lo que sugiere que la señal es más limpia o que el micrófono tiene menor sensibilidad en frecuencias más altas.  
-
-El micrófono 2 indica presencia de picos en el rango de 100 Hz a 1 kHz nos brinda información de que el sonido captado tiene componentes dominantes en esta banda, este rango es típico de voces humanas que fue lo que se midió, este micrófono captó una señal con más energía en variaciones esto puede deberse a que el micrófono esté más cerca de la persona o captó más ruido ambiental, en el micrófono 3 se observa un pico muy marcado en la zona de 100 Hz , lo que indica que esta frecuencia es la más fuerte en la señal captada esto sugiere que el micrófono registró un sonido con un tono grave predominante, que sería el golpe del que se habló anteriormente además del pico dominante, hay varias frecuencias con amplitudes más bajas que se extienden hasta los 3 kHz esto indica que el sonido no es completamente puro este micrófono muestra menos energía en frecuencias más altas esto puede indicar que captó una señal más enfocada en los tonos graves o que su respuesta en frecuencias altas es menor captó una señal con un tono grave predominante , con un fuerte pico en 100 Hz y algunos armónicos en el rango de 100 Hz-3 kHz .  
-
-Con respecto a las gráficas de Densidad Espectral de Potencia todas siguen una tendencia descendente a medida que aumenta la frecuencia, la forma de la curva sugiere que hay un filtro natural o una limitación en el sistema que atenúa las frecuencias más altas analizando región de medias frecuencias (10² - 10³ Hz) evidenciamos que aquí es donde se observan diferencias más notables ya que en el MICRÓFONO 1 y MICRÓFONO 3, la curva muestra una ligera caída progresiva con pequeñas fluctuaciones mientras que El MICRÓFONO 2 mantiene una caída más uniforme y menos oscilaciones. El análisis entre región de altas frecuencias (10³ - 10⁴ Hz) se observa una caída más pronunciada en todos los micrófonos, lo que sugiere una pérdida de potencia en altas frecuencias debido a la respuesta del sistema o las características del micrófono y El MICRÓFONO 3 muestra más fluctuaciones en esta región antes de la caída final, cerca de 10⁴ Hz en todos los casos, hay una caída abrupta que indica el límite del ancho de banda del sistema. La representación logarítmica resalta que la energía está más concentrada en bajas frecuencias y que la atenuación en altas frecuencias es un patrón común en los tres micrófonos. Sin embargo, MICRÓFONO 2 parece ser el más estable en todo el espectro.  
+Con respecto al eje X Frecuencia en Hz, escala lineal, representa las frecuencias presentes en la señal. La escala es logarítmica, lo que permite visualizar mejor un amplio rango de frecuencia analizando una a una las señales encontramos que:  
+🔴 **Micrófono 1**: El espectro muestra picos concentrados en una banda alrededor de los 100 Hz-1 kHz , esto indica que la señal captada tiene componentes en ese rango de frecuencias, posiblemente un sonido, no se observan muchas frecuencias altas, lo que sugiere que la señal es más limpia o que el micrófono tiene menor sensibilidad en frecuencias más altas.    
+🟣 **Micrófono 2**: Indica presencia de picos en el rango de 100 Hz a 1 kHz nos brinda información de que el sonido captado tiene componentes dominantes en esta banda, este rango es típico de voces humanas que fue lo que se midió, este micrófono captó una señal con más energía en variaciones esto puede deberse a que el micrófono esté más cerca de la persona o captó más ruido ambiental.  
+🟢 **Micrófono 3**: Se observa un pico muy marcado en la zona de 100 Hz , lo que indica que esta frecuencia es la más fuerte en la señal captada esto sugiere que el micrófono registró un sonido con un tono grave predominante, que sería el golpe del que se habló anteriormente además del pico dominante, hay varias frecuencias con amplitudes más bajas que se extienden hasta los 3 kHz esto indica que el sonido no es completamente puro este micrófono muestra menos energía en frecuencias más altas esto puede indicar que captó una señal más enfocada en los tonos graves o que su respuesta en frecuencias altas es menor captó una señal con un tono grave predominante , con un fuerte pico en 100 Hz y algunos armónicos en el rango de 100 Hz-3 kHz.    
+_______________________________________   
+## Densidad Espectral de Potencia
+Con respecto a estas graficas, todas siguen una tendencia descendente a medida que aumenta la frecuencia, la forma de la curva sugiere que hay un filtro natural o una limitación en el sistema que atenúa las frecuencias más altas analizando región de medias frecuencias (10² - 10³ Hz) evidenciamos que aquí es donde se observan diferencias más notables ya que en el **MICRÓFONO 1 y MICRÓFONO 3**, la curva muestra una ligera caída progresiva con pequeñas fluctuaciones mientras que **El MICRÓFONO 2** mantiene una caída más uniforme y menos oscilaciones. El análisis entre región de altas frecuencias (10³ - 10⁴ Hz) se observa una caída más pronunciada en todos los micrófonos, lo que sugiere una pérdida de potencia en altas frecuencias debido a la respuesta del sistema o las características del micrófono y **El MICRÓFONO 3** muestra más fluctuaciones en esta región antes de la caída final, cerca de 10⁴ Hz en todos los casos, hay una caída abrupta que indica el límite del ancho de banda del sistema. La representación logarítmica resalta que la energía está más concentrada en bajas frecuencias y que la atenuación en altas frecuencias es un patrón común en los tres micrófonos. Sin embargo, **MICRÓFONO 2** parece ser el más estable en todo el espectro.  
 
  
 
-![WhatsApp Image 2025-03-07 at 3 41 26 PM](https://github.com/user-attachments/assets/240332b1-839c-484d-af93-4dfa20bcf374)    
-  |*Figura 10: Resultado de Componentes Independientes (ICA) y el Beamforming.*|     
+  
 
 
 
