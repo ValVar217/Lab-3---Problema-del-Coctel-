@@ -342,11 +342,7 @@ Por ultimo pero no menos importante, tenemos el Análisis de Componentes Indepen
 El beamforming no fue efectivo en este caso ya que de hecho, deterioró la calidad de la señal, lo que puede significar errores en el cálculo del retraso, diferencias en las características de los micrófonos o ruido ambiental fuerte. A comparacion del ICA que superó las limitaciones del beamforming, ya que logro una separación efectiva de la señal de interés y una mejora sustancial en el SNR. Este comportamiento es eficiente con las expectativas que teniamos, ya que el ICA es una técnica más "precisa" para separar las señales que estan mezcladas y que tienen diferentes características estadísticas.  
 No se logro totalmente el objetivo de la practica, pero nuestros resultados son bastante buenos y para una nueva oportunidad podermos realizar bien el tema de juntar las graficas/señales (no sumandolas) y poder aislar completamente nuestra voz de interes que en este sistema se nos complico un poco por los factores tratados durante el desarrollo de la practica que fue procesar todos los auidios y evaliar sus caracteristicas siendo esto optimo logro para una nueva oportunidad.
 
-___________________________________   
-
-**CONCLUSION** 
-
-
+___________________________________     
 
 ## Licencia 
 Open Data Commons Attribution License v1.0
